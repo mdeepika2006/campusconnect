@@ -1,0 +1,138 @@
+package hotelmanagement;
+import java.util.Scanner;
+
+public class Hotel
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("=================================");
+        System.out.println("        WELCOME TO HOTEL         ");
+        System.out.println("=================================");
+
+        System.out.println("\n----------- MAIN MENU -----------");
+        System.out.println("1. Fried Rice");
+        System.out.println("2. Fried Noodles");
+        System.out.println("3. Biryani");
+        System.out.println("4. Juices");
+        System.out.println("---------------------------------");
+
+        System.out.print("Enter your choice: ");
+        int choice = sc.nextInt();
+
+        int plates;
+        int cost = 0;
+        int total;
+
+        switch(choice)
+        {
+            case 1:
+                System.out.println("\n------ FRIED RICE MENU ------");
+                System.out.println("1. Paneer Rice  - Rs.110");
+                System.out.println("2. Veg Rice     - Rs.100");
+                System.out.println("3. Egg Rice     - Rs.150");
+                System.out.println("4. Chicken Rice - Rs.110");
+                System.out.println("-----------------------------");
+
+                System.out.print("Select item: ");
+                int fr = sc.nextInt();
+
+                switch(fr)
+                {
+                    case 1: cost = 110; break;
+                    case 2: cost = 100; break;
+                    case 3: cost = 150; break;
+                    case 4: cost = 110; break;
+                    default: System.out.println("Invalid item");
+                }
+                break;
+
+            case 2:
+                System.out.println("\n------ FRIED NOODLES MENU ------");
+                System.out.println("1. Chicken Noodles - Rs.160");
+                System.out.println("2. Gobi Noodles    - Rs.120");
+                System.out.println("3. Paneer Noodles  - Rs.150");
+                System.out.println("4. Mushroom Noodles- Rs.140");
+                System.out.println("5. Egg Noodles     - Rs.130");
+
+                System.out.print("Select item: ");
+                int n = sc.nextInt();
+
+                if(n==1) cost = 160;
+                else if(n==2) cost = 120;
+                else if(n==3) cost = 150;
+                else if(n==4) cost = 140;
+                else if(n==5) cost = 130;
+                break;
+
+            case 3:
+                System.out.println("\n------ BIRYANI MENU ------");
+                System.out.println("1. Chicken Biryani     - Rs.220");
+                System.out.println("2. Veg Biryani         - Rs.150");
+                System.out.println("3. Paneer Biryani      - Rs.200");
+                System.out.println("4. Egg Biryani         - Rs.180");
+                System.out.println("5. Chicken 65 Biryani  - Rs.250");
+
+                System.out.print("Select item: ");
+                int b = sc.nextInt();
+
+                if(b==1) cost = 220;
+                else if(b==2) cost = 150;
+                else if(b==3) cost = 200;
+                else if(b==4) cost = 180;
+                else if(b==5) cost = 250;
+                break;
+
+            case 4:
+                System.out.println("\n------ JUICES MENU ------");
+                System.out.println("1. Orange Juice      - Rs.60");
+                System.out.println("2. Apple Juice       - Rs.70");
+                System.out.println("3. Watermelon Juice  - Rs.50");
+                System.out.println("4. Grapes Juice      - Rs.65");
+                System.out.println("5. Mango Juice       - Rs.80");
+
+                System.out.print("Select item: ");
+                int j = sc.nextInt();
+
+                if(j==1) cost = 60;
+                else if(j==2) cost = 70;
+                else if(j==3) cost = 50;
+                else if(j==4) cost = 65;
+                else if(j==5) cost = 80;
+                break;
+
+            default:
+                System.out.println("Invalid Choice");
+                return;
+        }
+
+        System.out.print("\nEnter number of cups: ");
+        plates = sc.nextInt();
+
+        total = plates * cost;
+
+        System.out.println("\n----------- ORDER SUMMARY -----------");
+        System.out.println("Price per plate : Rs." + cost);
+        System.out.println("Number of plates: " + plates);
+        System.out.println("Total Amount    : Rs." + total);
+        System.out.println("-------------------------------------");
+
+        System.out.print("\nConfirm Order? (1-Yes / 2-No): ");
+        int confirm = sc.nextInt();
+
+        if(confirm == 1)
+        {
+            System.out.println("\nOrder Confirmed Successfully!");
+            System.out.println("Preparing your food...");
+            System.out.println("\n***** THANK YOU! VISIT AGAIN *****");
+        }
+        else
+        {
+            System.out.println("\nOrder Cancelled.");
+            System.out.println("***** THANK YOU! VISIT AGAIN *****");
+        }
+
+        sc.close();
+    }
+}
